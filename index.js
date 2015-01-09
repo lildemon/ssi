@@ -1,5 +1,6 @@
 
 var SSI = require("./lib/SSI");
+var DirectiveHandler = require('./lib/DirectiveHandler');
 
 (function() {
 	"use strict";
@@ -16,6 +17,8 @@ var SSI = require("./lib/SSI");
 			return this.parser.parse(filename, contents);
 		}
 	};
+
+	ssi.handlers = DirectiveHandler.handlers = {}
 
 	module.exports = ssi;
 })();
